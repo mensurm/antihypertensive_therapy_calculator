@@ -1,0 +1,98 @@
+<ion-view title="Result">
+<ion-content class="has-header">
+
+<div class="card list">
+  <div class="item item-divider">
+    Recommendation
+  </div>
+  
+  <div class="item item-text-wrap">
+    <label class = "item item-input item-select item-balanced">
+      <div class = "input-label">
+        Desired drug
+      </div>
+      
+      <select >
+        <option ng-model="primaryDrug" ng-repeat="drug in drugs.list">{{drug.name}}</option>
+        
+      </select>
+    </label>
+    <br>
+    <label class = "item item-input item-select item-balanced">
+      <div class = "input-label">
+        Recommended dosage
+      </div>
+      
+      <select>
+        <option>40 mg</option>
+        <option>50 mg</option>
+        <option selected>80 mg</option>
+        <option>160 mg</option>
+        
+      </select>
+    </label>
+  </div>
+</div>
+<div class="card list">
+  <div class="item item-divider">
+    Indications
+  </div>
+  <div class="item item-text-wrap">
+    <ul>
+      <li>Treatment of hypertension, to lower blood pressure.</li>
+      <li>Treatment of heart failure (NYHA class II-IV).</li>
+      <li>Reduction of cardiovascular mortality in clinically stable patients with
+      left ventricular failure or left ventricular dysfunction following myocardial infarction.</li>
+    </ul>
+    
+    
+  </div>
+</div>
+<div class="card list">
+  <div class="item item-divider">
+    Counterindications
+  </div>
+  <div class="item item-text-wrap">
+    <ul>
+      <li>Known hypersensitivity to any component.</li>
+      <li>Do not coadminister aliskiren with Diovan in patients with diabetes.</li>
+      <li>Do not combine with ACE inhibitors in daily therapy.</li>
+    </ul>
+    
+    
+  </div>
+</div>
+<div class="card list">
+  <div class="item item-divider">
+    Interactions
+  </div>
+  <div class="item item-text-wrap">
+    <ul>
+      <li>Potassium-sparing diuretics, potassium supplements or salt substitutes may lead to increases in serum potassium, and in heart failure patients, increases in serum creatinine.</li>
+      <li>NSAID use may lead to increased risk of renal impairment and loss of antihypertensive effect.</li>
+      <li>Dual inhibition of the renin-angiotensin system: Increased risk of renal impairment, hypotension, and hyperkalemia.</li>
+      <li>Lithium: Increases in serum lithium concentrations and lithium toxicity.</li>
+    </ul>
+    
+    
+  </div>
+</div>
+<div class="card list">
+  <div class="item item-divider">
+    Side effects
+  </div>
+  <div class="item item-text-wrap">
+    <ul>
+      <li>Hypertension: Most common adverse reactions are headache, dizziness, viral infection, fatigue and abdominal pain.</li>
+      <li>Heart Failure: Most common adverse reactions are dizziness, hypotension, diarrhea, arthralgia, back pain, fatigue and hyperkalemia.</li>
+      <li>Post-Myocardial Infarction: Most common adverse reactions which caused patients to discontinue therapy are hypotension, cough and increased blood creatinine.</li>
+      
+    </ul>
+    
+    
+  </div>
+</div>
+
+
+</ion-content>
+</ion-view>
