@@ -1,5 +1,7 @@
 <ion-view title="Input">
+  
   <ion-content class="has-header">
+  
   <div class="card list">
     <div class="item item-divider">
       Current therapy
@@ -8,12 +10,10 @@
     <div class="item item-text-wrap">
       <label class = "item item-input item-select item-positive">
         <div class = "input-label">
-          Select drug
+          Select medication
         </div>
         
-        <select>
-          <option ng-model="primaryDrug" ng-repeat="drug in drugs.list">{{drug.name}}</option>
-          
+        <select id="sourceDrugSelect" ng-model="sourceDrug" ng-options="drug as drug.name for drug in data.sourceDrugs"  ng-change="setSourceDrug(sourceDrug)">  
         </select>
       </label>
       <br>
@@ -22,13 +22,8 @@
           Select dosage
         </div>
         
-        <select>
-          <option>40 mg</option>
-          <option>50 mg</option>
-          <option selected>80 mg</option>
-          <option>160 mg</option>
-          
-        </select>
+        <select id="sourceDrugDosageSelect" ng-model="dosage" ng-options="item as item.dosage for item in dosages"  ng-change="setDrugDosage(dosage)">
+          </select>
       </label>
     </div>
   </div>
@@ -47,9 +42,10 @@
           Select drug
         </div>
         
-        <select>
-          <option ng-repeat="drug in drugs.list">{{drug.name}}</option>
-        </select>
+      
+         <select id="targetDrugSelect" ng-model="targetDrug" ng-options="drug as drug.name for drug in data.targetDrugs"  ng-change="setTargetDrug(targetDrug)">
+          </select>
+    
       </label>
     </div>
   </div>
