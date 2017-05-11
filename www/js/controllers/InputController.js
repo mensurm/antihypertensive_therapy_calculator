@@ -20,43 +20,26 @@ angular.module("calculator.controllers", []).controller('InputController', funct
 
   $scope.sourceDrug = drugsService.getSourceDrug();
   $scope.targetDrug = drugsService.getTargetDrug();
-  $scope.dosage = drugsService.getSourceDrugDosage
+  $scope.dosage = drugsService.getSourceDrugDosage();
 
   $scope.setSourceDrug = function (drug) {
     drugsService.setSourceDrug(drug);
-    $scope.dosages = drugsService.getDrugDosages(drug);
-    console.log(drugsService.getSourceDrug());
+    
+    // repopulate the select box with the available dosages 
+    $scope.data.dosages = drugsService.getDrugDosages(drug);
+
+    // set defualt choice     
+    $scope.setDrugDosage($scope.data.dosages[0]);
+    $scope.dosage = drugsService.getSourceDrugDosage();
   };
 
   $scope.setTargetDrug = function (drug) {
     drugsService.setTargetDrug(drug);
-    console.log(drugsService.getTargetDrug());
   };
 
   $scope.setDrugDosage = function(dosage){
     drugsService.setSourceDrugDosage(dosage);
   }
-
-
-
-
-  /*  $scope.primaryDrugDosage = {
-      options: $scope.primaryDrug.selected.dosages,
-      selected: $scope.primaryDrug.selected.dosages[0]
-    }
-  
-    $scope.secondaryDrug = {
-    options : drugsService.getTargetDrugs(),
-    selected : drugsService.getTargetDrugs()[1]
-    }
-  
-  
-    
-  
-  
-      $scope.onSecondaryDrugChange = function() {
-       
-    };*/
 
 });
 

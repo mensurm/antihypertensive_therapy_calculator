@@ -1,45 +1,50 @@
 <ion-view title="Input">
-  
+
   <ion-content class="has-header">
-  
-  <div class="card list">
-    <div class="item item-divider">
-      Current therapy
-    </div>
-    
-    <div class="item item-text-wrap">
-      <label class = "item item-input item-select item-positive">
+
+    <div class="card list">
+      <div class="item item-divider">
+        Current therapy
+      </div>
+      <div class="item item-text-wrap">
+        Select the medication and dosage the patient is currently taking.
+      </div>
+      <div class="item item-text-wrap">
+        <label class="item item-input item-select item-positive">
         <div class = "input-label">
-          Select medication
+          Medication
         </div>
         
         <select id="sourceDrugSelect" ng-model="sourceDrug" ng-options="drug as drug.name for drug in data.sourceDrugs"  ng-change="setSourceDrug(sourceDrug)">  
         </select>
       </label>
-      <br>
-      <label class = "item item-input item-select item-positive">
+        <br>
+        <label class="item item-input item-select item-positive">
         <div class = "input-label">
-          Select dosage
+          Dosage
         </div>
         
-        <select id="sourceDrugDosageSelect" ng-model="dosage" ng-options="item as item.dosage for item in dosages"  ng-change="setDrugDosage(dosage)">
+        <select id="sourceDrugDosageSelect" ng-model="dosage" ng-options="item as item.dosage for item in data.dosages"  ng-change="setDrugDosage(dosage)">
           </select>
       </label>
+      </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="col text-center">
-      <i class="icon ion-chevron-down"></i>
+    <div class="row">
+      <div class="col text-center">
+        <i class="icon ion-chevron-down"></i>
+      </div>
     </div>
-  </div>
-  <div class="card list">
-    <div class="item item-divider">
-      Change to
-    </div>
-    <div class="item item-text-wrap">
-      <label class = "item item-input item-select item-positive">
+    <div class="card list">
+      <div class="item item-divider">
+        Change to
+      </div>
+      <div class="item item-text-wrap">
+        Select the medication you want to switch to.
+      </div>
+      <div class="item item-text-wrap">
+        <label class="item item-input item-select item-positive">
         <div class = "input-label">
-          Select drug
+          Medication
         </div>
         
       
@@ -47,14 +52,14 @@
           </select>
     
       </label>
+      </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="col text-center">
-      <a href="#/results" class="button button-block button-balanced">
+    <div class="row">
+      <div class="col text-center">
+        <a href="#/results" class="button button-block button-balanced">
       Calculate
       </a>
+      </div>
     </div>
-  </div>
   </ion-content>
 </ion-view>

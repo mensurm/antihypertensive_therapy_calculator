@@ -13,6 +13,6 @@ app.config(function($stateProvider) {
 app.controller('ResultsController', function($scope, drugsService){
 		$scope.sourceDrug = drugsService.getSourceDrug();
 		$scope.targetDrug = drugsService.getTargetDrug();
-	
+    $scope.targetDrugDosage = drugsService.getTargetDrugDosage();
 	
 });

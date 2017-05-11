@@ -43,7 +43,7 @@ var drugs = [
     sideEffects: ""
   }];
 
-var dosageEquivalents = [
+var drugDosages = [
   {
     drugId: 1,
     dosages: [
@@ -131,22 +131,36 @@ angular.module("calculator.services", []).factory("drugsService", function () {
       targetDrug = drug;
     },
     getSourceDrugDosage: function(){
-      return sourceDrugDosage;
+      if (sourceDrugDosage !== undefined){
+        return sourceDrugDosage;
+      } 
+      else {
+        return this.getDrugDosages(this.getSourceDrug())[0];
+      } 
     },
     setSourceDrugDosage: function (dosage) {
       sourceDrugDosage = dosage;
     },
 
     getDrugDosages: function(drug){
-      for(i=0; i < dosageEquivalents.length; i++ ){
-        if (dosageEquivalents[i].drugId == drug.id){
-          return dosageEquivalents[i].dosages;
+      for(i=0; i < drugDosages.length; i++ ){
+        if (drugDosages[i].drugId == drug.id){
+          return drugDosages[i].dosages;
         }
       }
     },
 
     getSourceDrugDosages: function(){
-      return this.getDrugDosages(this.getSourceDrug());
-    }    
+      var dosages =  this.getDrugDosages(this.getSourceDrug());
+      return dosages;
+    },
+
+    getTargetDrugDosage: function(){
+      var sourceDrugDosage = this.getSourceDrugDosage();
+      var targetDrug = this.getTargetDrug();
+      
+      var targetDrugDosages = this.getDrugDosages(targetDrug);
+      return targetDrugDosages[sourceDrugDosage.index];
+    }   
   }
 });
