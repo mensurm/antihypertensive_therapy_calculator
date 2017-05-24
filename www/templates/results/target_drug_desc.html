@@ -1,0 +1,81 @@
+<ion-view title="results_view">
+<ion-content class="has-header">
+
+<div class="card">
+ 
+  <div class="item item-text-wrap">
+    <h1>
+        <span class="dark">{{sourceDrug.name}} ({{sourceDrugDosage.dosage}})</span>  
+        &nbsp;&nbsp;<i class="icon ion-arrow-right-c"></i> &nbsp;&nbsp;
+        <span class="balanced"> {{targetDrug.name}} </span>
+    </h1>
+  </div>
+  
+</div>
+
+
+
+<div class="card">
+  <div class="item item-divider">
+    Recommended dosage
+  </div>
+  <div class="item item-text-wrap">
+    <h1>{{targetDrugDosage.dosage}} </h1>
+  </div>
+  
+</div>
+
+
+<div class="card list">
+  <div class="item item-divider">
+    Indications
+  </div>
+  <div class="item item-text-wrap">
+    <ul>
+     <li ng-repeat="indication in targetDrug.indications">{{indication}}</li>
+    </ul>
+    
+    
+  </div>
+</div>
+<div class="card list">
+  <div class="item item-divider">
+    Counterindications
+  </div>
+  <div class="item item-text-wrap">
+    <ul>
+      <li ng-repeat="counterIndication in targetDrug.counterIndications">{{counterIndication}}</li>
+    </ul>
+    
+    
+  </div>
+</div>
+
+<div class="card list">
+  <div class="item item-divider">
+    Interactions
+  </div>
+  <div class="item item-text-wrap">
+    <ul>
+    
+    </ul>
+    
+    
+  </div>
+</div>
+<div class="card list">
+  <div class="item item-divider">
+    Side effects
+  </div>
+  <div class="item item-text-wrap">
+    <ul>
+      
+    </ul>
+    
+    
+  </div>
+</div>
+
+
+</ion-content>
+</ion-view>

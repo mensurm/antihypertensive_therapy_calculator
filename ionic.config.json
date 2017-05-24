@@ -1,4 +1,5 @@
 {
   "name": "Calculator",
-  "app_id": "org.prakticniregistarlijekova.ahpt_drug_calculator"
+  "app_id": "org.prakticniregistarlijekova.ahpt_drug_calculator",
+  "type": "ionic1"
 }

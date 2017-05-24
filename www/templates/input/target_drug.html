@@ -1,0 +1,35 @@
+<ion-view title="target_drug_view">
+
+  <ion-content class="has-header">
+
+    <div class="card list">
+      <div class="item item-divider">
+        New therapy
+      </div>
+      <div class="item item-text-wrap">
+        Select the new medication you wish to switch to.
+      </div>
+      <div class="item item-text-wrap">
+        <label class="item item-input item-select item-positive">
+        <div class = "input-label">
+          Medication
+        </div>
+        
+        <select id="targetDrugSelect" ng-model="targetDrug" ng-options="drug as drug.name for drug in data.targetDrugs track by drug.id"  ng-change="setTargetDrug(targetDrug)">  
+        </select>
+      </label>
+        <br>
+       
+      </div>
+    </div>
+    
+    
+    <div class="row">
+      <div class="col text-center">
+        <a href="#/results" class="button button-block button-balanced">
+      Next
+      </a>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,35 @@
+<ion-view title="source_dosage_view">
+
+  <ion-content class="has-header">
+
+    <div class="card list">
+      <div class="item item-divider">
+        Current therapy
+      </div>
+      <div class="item item-text-wrap">
+        Select the current dosage patient is taking.
+      </div>
+      <div class="item item-text-wrap">
+        <label class="item item-input item-select item-positive">
+        <div class = "input-label">
+          Dosage
+        </div>
+        
+        <select id="sourceDosageSelect" ng-model="sourceDosage" ng-options="dosage as dosage.dosage for dosage in data.dosages track by dosage.index"  ng-change="setSourceDrugDosage(sourceDosage)">  
+        </select>
+      </label>
+        <br>
+       
+      </div>
+    </div>
+    
+    
+    <div class="row">
+      <div class="col text-center">
+        <a href="#/target-drug" class="button button-block button-balanced">
+      Next
+      </a>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
